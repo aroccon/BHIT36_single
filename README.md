@@ -1,14 +1,15 @@
 
 ~~~text
-███    ███ ██   ██ ██ ████████ ██████   ██████  
-████  ████ ██   ██ ██    ██         ██ ██       
-██ ████ ██ ███████ ██    ██     █████  ███████  
-██  ██  ██ ██   ██ ██    ██         ██ ██    ██ 
-██      ██ ██   ██ ██    ██    ██████   ██████         
+███████    ██   ██ ██ ████████ ██████   ██████  
+██     ██  ██   ██ ██    ██         ██ ██       
+██ ████    ███████ ██    ██     █████  ███████  
+██     ██  ██   ██ ██    ██         ██ ██    ██ 
+███████    ██   ██ ██    ██    ██████   ██████         
 ~~~
 
 
 #### GPU-based Finite difference code for DNS of Multiphase Homogenous isotropic turbulence (PFM and particles)
+#### Sandbox for Bubbles in turbulence (not validated ATM)
 
 Main developer: A. Roccon 
 
@@ -22,9 +23,10 @@ Current capabiltiies:
 * Tracking of tracers
 * Paraview files for particles
 * Surface tension forces 
-* Euler/AB2 for time integration (default AB2)
+* AB2 for time integration (default AB2)
 
 Future developments:
+* Density differences (work in progress)
 * Tracking of inertial particles
 * FFTW for CPU debug run 
 * Memory optimization

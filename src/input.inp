@@ -4,8 +4,10 @@
 1000        ! Saving frequency
 0           ! inflow condition (0=Taylor green, 1=read from fields)
 0.0002      ! dt for the simulation
-0.000625       ! mu (viscosity)
-1.000       ! density
+0.000625    ! viscosity liquid
+0.000625    ! viscosity gas
+1.000       ! density liquid
+1.000       ! density gas
 0.0         ! A forcing parameter (ABC forcing)
 0.0         ! B forcing parameter (ABC forcing)
 0.0         ! C forcing parameter (ABC forcing)

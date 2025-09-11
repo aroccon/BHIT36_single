@@ -17,8 +17,10 @@ read(55,*) dump
 !Flow parameters
 read(55,*) inflow
 read(55,*) dt
-read(55,*) mu
-read(55,*) rho
+read(55,*) mul
+read(55,*) mug
+read(55,*) rhol
+read(55,*) rhog
 ! forcing parameters
 read(55,*) f1
 read(55,*) f2
@@ -36,18 +38,18 @@ lx=2.d0*pi
 dx=lx/(dble(nx)-1)
 dxi=1.d0/dx
 ddxi=1.d0/dx/dx
-rhoi=1.d0/rho
 eps=epsr*dx
 epsi=1.d0/eps
 enum=1.0E-16
 
+
 !enable/disable for debug check parameters
 write(*,*) "----------------------------------------------"
-write(*,*) "███    ███ ██   ██ ██ ████████ ██████   ██████"  
-write(*,*) "████  ████ ██   ██ ██    ██         ██ ██"       
-write(*,*) "██ ████ ██ ███████ ██    ██     █████  ███████"  
-write(*,*) "██  ██  ██ ██   ██ ██    ██         ██ ██    ██" 
-write(*,*) "██      ██ ██   ██ ██    ██    ██████   ██████"         
+write(*,*) "███████    ██   ██ ██ ████████ ██████   ██████  "  
+write(*,*) "██     ██  ██   ██ ██    ██         ██ ██       "       
+write(*,*) "██ ████    ███████ ██    ██     █████  ███████  "  
+write(*,*) "██     ██  ██   ██ ██    ██         ██ ██    ██ " 
+write(*,*) "███████    ██   ██ ██    ██    ██████   ██████   "         
 write(*,*) "----------------------------------------------"
 write(*,*) "Restart ", restart
 write(*,*) "Tstart  ", tstart
