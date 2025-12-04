@@ -430,6 +430,8 @@ do t=tstart,tfin
     #endif
 
     ! find u, v and w star (AB2), overwrite u,v and w
+    alpha=1.5d0
+    beta= 0.5d0
     !$acc kernels
     do k=1,nx
         do j=1,nx
@@ -437,19 +439,12 @@ do t=tstart,tfin
                 u(i,j,k) = u(i,j,k) + dt*(alpha*rhsu(i,j,k)-beta*rhsu_o(i,j,k))
                 v(i,j,k) = v(i,j,k) + dt*(alpha*rhsv(i,j,k)-beta*rhsv_o(i,j,k))
                 w(i,j,k) = w(i,j,k) + dt*(alpha*rhsw(i,j,k)-beta*rhsw_o(i,j,k))
+                rhsu_o(i,j,k)=rhsu(i,j,k)
+                rhsv_o(i,j,k)=rhsv(i,j,k)
+                rhsw_o(i,j,k)=rhsw(i,j,k)
             enddo
         enddo
     enddo
-    !$acc end kernels
-
-    ! store rhs* in rhs*_o 
-    ! After first step move to AB2 
-    !$acc kernels
-    alpha=1.5d0
-    beta= 0.5d0
-    rhsu_o=rhsu
-    rhsv_o=rhsv
-    rhsw_o=rhsw
     !$acc end kernels
 
 
